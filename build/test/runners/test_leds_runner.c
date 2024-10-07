@@ -14,6 +14,13 @@ extern void test_todos_los_leds_inician_apagados(void);
 extern void test_prender_un_led_individual(void);
 extern void test_prender_y_apagar_un_led_individual(void);
 extern void test_prender_y_apagar_varios_leds(void);
+extern void test_apagar_todos_LEDs(void);
+extern void test_perder_todos_LEDs(void);
+extern void test_consultar_estado_encendido(void);
+extern void test_consultar_estado_apagado(void);
+extern void test_verificar_limites_parametros(void);
+extern void test_verificar_parametros_fuera_limites(void);
+extern void test_verificar_puntero_nulo(void);
 
 
 /*=======Mock Management=====*/
@@ -78,10 +85,17 @@ static void run_test(UnityTestFunction func, const char* name, UNITY_LINE_TYPE l
 int main(void)
 {
   UnityBegin("test_leds.c");
-  run_test(test_todos_los_leds_inician_apagados, "test_todos_los_leds_inician_apagados", 27);
-  run_test(test_prender_un_led_individual, "test_prender_un_led_individual", 35);
-  run_test(test_prender_y_apagar_un_led_individual, "test_prender_y_apagar_un_led_individual", 42);
-  run_test(test_prender_y_apagar_varios_leds, "test_prender_y_apagar_varios_leds", 51);
+  run_test(test_todos_los_leds_inician_apagados, "test_todos_los_leds_inician_apagados", 42);
+  run_test(test_prender_un_led_individual, "test_prender_un_led_individual", 50);
+  run_test(test_prender_y_apagar_un_led_individual, "test_prender_y_apagar_un_led_individual", 57);
+  run_test(test_prender_y_apagar_varios_leds, "test_prender_y_apagar_varios_leds", 66);
+  run_test(test_apagar_todos_LEDs, "test_apagar_todos_LEDs", 77);
+  run_test(test_perder_todos_LEDs, "test_perder_todos_LEDs", 85);
+  run_test(test_consultar_estado_encendido, "test_consultar_estado_encendido", 93);
+  run_test(test_consultar_estado_apagado, "test_consultar_estado_apagado", 100);
+  run_test(test_verificar_limites_parametros, "test_verificar_limites_parametros", 106);
+  run_test(test_verificar_parametros_fuera_limites, "test_verificar_parametros_fuera_limites", 114);
+  run_test(test_verificar_puntero_nulo, "test_verificar_puntero_nulo", 128);
 
   return UnityEnd();
 }
